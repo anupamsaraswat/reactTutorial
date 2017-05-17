@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { connect }          from 'react-redux';
 import { addTodo }          from 'actions';
 import CustomComponent      from './custom-component';
+import {Label}  from './labelComponent.js'
 
-export class App extends Component {
+export class TODO extends Component {
 
 	render () {
-		const { todos, addTodo } = this.props;
+		const { todos, updateTODOList } = this.props;
 
 		const listItems = todos.map((x, i) => {
-			return <li key={ i }>{x.text}</li>;
+			return <Label key={i} value={x.text}/>;
 		});
 
 		return (
@@ -20,10 +21,11 @@ export class App extends Component {
 				</ul>
 				<input id="theInput" ref="input" type="text" placeholder="Add Todo" />
 				<button onClick={ () => {
-					addTodo({ text: this.refs.input.value });
+					updateTODOList({ text: this.refs.input.value });
 				}}>Add Todo</button>
-				
+
 				<CustomComponent name="Edwin Perez as prop" />
+				<Label value="Name"/>
 
 			</div>
 		);
@@ -39,11 +41,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		addTodo (todo) { dispatch(addTodo(todo)); }
+		updateTODOList (todo) { dispatch(addTodo(todo)); }
 	}
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(TODO)
