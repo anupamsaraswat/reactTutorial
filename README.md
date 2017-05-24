@@ -7,6 +7,7 @@ cd my-app
 npm start
 ```
 - Understand [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#folder-structure)
+- [React Tutorial](https://facebook.github.io/react/docs/installation.html)
 
 
 # reactTutorial
