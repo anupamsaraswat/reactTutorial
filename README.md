@@ -16,3 +16,6 @@ https://github.com/trigun539/react-tutorial
 npm install -g generator-ep-react-simple
 #
 npm install -g yo
+
+#### Communication between parent and child component
+ > [reference-link](https://www.ctheu.com/2015/02/12/how-to-communicate-between-react-components/)
